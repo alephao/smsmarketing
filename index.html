@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>SMS Marketing</title>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    $(function(){
+        var homeC = $('div#home').offset().top - $('nav').outerHeight();
+        var homeC2 = homeC + $('div#home').outerHeight();
+
+        var sobreC = $('div#about').offset().top - $('nav').outerHeight();
+        var sobreC2 = sobreC + $('div#about').outerHeight();
+
+        var mensagemC = $('div#mensagem').offset().top - $('nav').outerHeight();
+        var mensagemC2 = mensagemC + $('div#mensagem').outerHeight();
+
+        var ondeC = $('div#onde').offset().top - $('nav').outerHeight();
+        var ondeC2 = ondeC + $('div#onde').outerHeight();
+
+        var planoC = $('div#plano').offset().top - $('nav').outerHeight();
+        var planoC2 = planoC + $('div#plano').outerHeight();
+
+        $(window).scroll(function(){
+            if( (homeC <= $(window).scrollTop()) && (homeC2 >= $(window).scrollTop()) ){
+                $('.active').removeClass('active');
+                $('#navhome').addClass('active');
+                goToActive();
+            } else if ( (sobreC <= $(window).scrollTop()) && (sobreC2 >= $(window).scrollTop()) ){
+                $('.active').removeClass('active');
+                $('#navsobre').addClass('active');
+                goToActive();
+            } else if ( (mensagemC <= $(window).scrollTop()) && (mensagemC2 >= $(window).scrollTop()) ){
+                $('.active').removeClass('active');
+                $('#navmensagem').addClass('active');
+                goToActive();
+            } else if ( (ondeC <= $(window).scrollTop()) && (ondeC2 >= $(window).scrollTop()) ){
+                $('.active').removeClass('active');
+                $('#navonde').addClass('active');
+                goToActive();
+            } else if ( (planoC <= $(window).scrollTop()) && (planoC2 >= $(window).scrollTop()) ){
+                $('.active').removeClass('active');
+                $('#navplano').addClass('active');
+                goToActive();
+            }
+        });
+    });
+
+    var goToActive = function() {
+        $('.nav-moving-bg').css('left', $('.active').offset().left);
+        $('.nav-moving-bg').css('width', $('.active').outerWidth());
+    }
+
+    var goToHome = function () {
+        $('body').animate({scrollTop: 0}, 500);
+    }
+
+    var goToAbout = function () {
+        $('body').animate({scrollTop: $('div#about').offset().top - $('nav').outerHeight()}, 500);
+    }
+
+    var goToMensagem = function () {
+        $('body').animate({scrollTop: $('div#mensagem').offset().top - $('nav').outerHeight()}, 500);
+    }
+
+    var goToOnde = function () {
+        $('body').animate({scrollTop: $('div#onde').offset().top - $('nav').outerHeight()}, 500);
+    }
+
+    var goToPlano = function () {
+        $('body').animate({scrollTop: $('div#plano').offset().top - $('nav').outerHeight()}, 500);
+    }
+</script>
+
+<nav>
+    <ul>
+        <li class="nav-moving-bg"></li>
+        <li class="active" id="navhome" onclick="goToHome();"><a href="#">Início</a></li>
+        <li id="navsobre" onclick="goToAbout();"><a href="#">Sobre</a></li>
+        <li id="navmensagem" onclick="goToMensagem();"><a href="#">Mensagem</a></li>
+        <li id="navonde" onclick="goToOnde();"><a href="#">Onde</a></li>
+        <li id="navplano" onclick="goToPlano();"><a href="#">Plano</a></li>
+    </ul>
+</nav>
+
+<div class="container-fluid" id="content">
+    <div id="home" class="row orange-bg" style=" padding-top: 7rem; padding-bottom: 10rem;">
+        <div class="col-xs-12 text-center">
+            <p class="sms-title">
+                <span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">SMS</span><span style="font-weight: 100">MARKETING</span>
+            </p>
+            <p class="sms-subtitle">Divulgue de maneria rápida, fácil e eficiente.</p>
+            <br/>
+            <br/>
+            <a href="#" class="btn-saiba" onclick="goToAbout();"><span>Saiba Mais</span></a>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top: 5rem;padding-bottom: 6rem;" id="about">
+        <div class="col-xs-12 col-sm-6">
+            <h3>O que vocês estão oferecendo?</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales, dui sed convallis vulputate, quam orci vestibulum nisl, quis interdum massa ex quis nulla. Aliquam convallis porta risus non aliquam. Etiam suscipit ullamcorper aliquet. Vivamus fringilla, massa id lacinia ullamcorper, ligula ipsum finibus lorem, hendrerit finibus turpis sem in sem. Nunc id libero et nulla accumsan blandit gravida et velit. Donec volutpat, dui vel interdum volutpat, enim leo fermentum risus, ac imperdiet augue ante in lectus. Aenean accumsan malesuada interdum. Duis id urna et magna sollicitudin varius nec quis leo. Nulla porttitor enim ut urna ultrices, quis tempus purus scelerisque. Donec eget tristique mi.
+            </p>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <h3 class="hidden-xs">&nbsp;</h3>
+            <p>
+                Nunc congue non justo ac luctus. Vivamus dolor velit, tristique nec laoreet vitae, vestibulum quis nibh. In mollis placerat massa, vel tincidunt est efficitur ac. Sed tristique, neque eget fringilla tempus, augue neque porttitor nibh, non malesuada metus mauris ut magna. Vivamus lacinia, mauris quis venenatis suscipit, diam justo posuere ex, quis auctor odio arcu vitae neque. Proin vulputate in lorem in ornare. Aenean ac mauris sed diam ultricies rutrum consequat quis tortor. Praesent ut porta felis, eget elementum lorem. Quisque lacinia pharetra libero, sodales aliquet massa.
+            </p>
+        </div>
+    </div>
+
+    <div class="row orange-bg" id="mensagem">
+        <div class="col-xs-12" style="padding-top: 7rem; padding-bottom: 10rem;">
+            <div class="section-title">
+                <div class="stepcircle">1</div><span>MENSAGEM</span>
+            </div>
+            <div>
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" id="onde">
+        <div class="col-xs-12" style="padding-top: 7rem; padding-bottom: 10rem;">
+            <div class="section-title">
+                <div class="stepcircle i">2</div><span>ONDE</span>
+            </div>
+            <div>
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+                <br/>
+                &nbsp;
+            </div>
+        </div>
+    </div>
+
+    <div class="row orange-bg" id="plano">
+        <div class="col-xs-12" style="padding-top: 7rem; padding-bottom: 10rem;">
+            <div class="section-title">
+                <div class="stepcircle">3</div><span>PLANO</span>
+            </div>
+
+            <div class="price-table">
+
+                <div class="price-item">
+                    <div class="price-header"><span>Básico</span></div>
+                    <div class="price-price-border">
+                        <div class="price-price"><span>250</span></div>
+                    </div>
+                    <div class="price-body">
+                        <ul>
+                            <li>10.000 SMS</li>
+                            <li>10.000 SMS</li>
+                            <li>10.000 SMS</li>
+                        </ul>
+                    </div>
+                    <div class="price-footer">Contratar</div>
+                </div>
+
+                <div class="price-item">
+                    <div class="price-header"><span>Intermediário</span></div>
+                    <div class="price-price-border">
+                        <div class="price-price"><span>500</span></div>
+                    </div>
+                    <div class="price-body">
+                        <ul>
+                            <li>50.000 SMS</li>
+                            <li>10.000 SMS</li>
+                            <li>10.000 SMS</li>
+                        </ul>
+                    </div>
+                    <div class="price-footer">Contratar</div>
+                </div>
+
+                <div class="price-item">
+                    <div class="price-header"><span>Massivo</span></div>
+                    <div class="price-price-border">
+                        <div class="price-price"><span>1000</span></div>
+                    </div>
+                    <div class="price-body">
+                        <ul>
+                            <li>100.000 SMS</li>
+                            <li>10.000 SMS</li>
+                            <li>10.000 SMS</li>
+                        </ul>
+                    </div>
+                    <div class="price-footer">Contratar</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="row">
+        SMS Marketing &copy; 2014
+        <br/>
+        Site por <a href="http://heptagon.com.br">Heptagon TI Ltda.</a>
+    </footer>
+
+</div>
+
+<script type="text/javascript">
+    $(function(){
+
+        $('.stepcircle').each(function(){
+            if ($(this).width() > $(this).height()){
+                $(this).css('height', $(this).width());
+            } else {
+                $(this).css('width', $(this).height());
+            }
+        });
+
+        $('#content').css('margin-top', $('nav').outerHeight());
+
+        $('.nav-moving-bg').css({
+            height: $('nav').outerHeight() - 1,
+            left: $('.active').offset().left,
+            width: $('.active').outerWidth() -1
+        });
+
+
+    });
+</script>
+
+</body>
+</html>
