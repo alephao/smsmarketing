@@ -44,6 +44,8 @@ $(function(){
             width: $('.active').outerWidth() -1
         });
 
+        $(window).scroll();
+
     });
 
     $(window).scroll(function(){
@@ -88,17 +90,29 @@ var goToHome = function () {
 }
 
 var goToAbout = function () {
-    $('body').animate({scrollTop: $('div#about').offset().top - $('nav').outerHeight()}, 500);
+    $('body').animate({
+        scrollTop: $('div#about').offset().top -
+                  ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight())
+    }, 500);
 }
 
 var goToMensagem = function () {
-    $('body').animate({scrollTop: $('div#mensagem').offset().top - $('nav').outerHeight()}, 500);
+    $('body').animate({
+        scrollTop:  $('div#mensagem').offset().top -
+                   ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight())
+    }, 500);
 }
 
 var goToOnde = function () {
-    $('body').animate({scrollTop: $('div#onde').offset().top - $('nav').outerHeight()}, 500);
+    $('body').animate({
+        scrollTop: $('div#onde').offset().top -
+                  ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight())
+    }, 500);
 }
 
 var goToPlano = function () {
-    $('body').animate({scrollTop: $('div#plano').offset().top - $('nav').outerHeight()}, 500);
+    $('body').animate({
+        scrollTop: $('div#plano').offset().top -
+                  ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight())
+    }, 500);
 }

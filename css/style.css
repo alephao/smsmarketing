@@ -1,12 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500);
 
 /*FONT SIZES
- * body p
- * .section-title
- * .grey-text
  * .sms-title
  * .sms-subtitle
  * .btn-saiba
+ * body p
+ * .section-title
+ * .grey-text
  * .price-table .price-header
  * .price-table .price-price
  * .price-table .price-price:before
@@ -14,13 +14,35 @@
  * .price-table .price-footer
 */
 
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Roboto",sans-serif;
+    font-weight: 100;
+}
+
+p {
+    font-weight: 300;
+}
+
+.section-title {
+    font-weight: 100;
+}
+
+
 @media only screen and (max-width: 767px) {
 
     .sms-title                          { font-size: 3.5rem; }
     .sms-subtitle                       { font-size: 2.3rem; }
     .btn-saiba                          { font-size: 2rem; }
     body p                              { font-size: 1.6rem; }
-    .section-title                      { font-size: 7rem; }
+    .section-title                      { font-size: 3.5rem; }
     .grey-text                          { font-size: 13px; }
     .price-table .price-header          { font-size: 2.5rem; }
     .price-table .price-price           { font-size: 4rem; }
@@ -36,7 +58,7 @@
     .sms-subtitle                       { font-size: 2.8rem; }
     .btn-saiba                          { font-size: 2rem; }
     body p                              { font-size: 1.6rem; }
-    .section-title                      { font-size: 7rem; }
+    .section-title                      { font-size: 5rem; }
     .grey-text                          { font-size: 13px; }
     .price-table .price-header          { font-size: 2.5rem; }
     .price-table .price-price           { font-size: 4rem; }
@@ -68,8 +90,8 @@
     .sms-title                          { font-size: 12rem; }
     .sms-subtitle                       { font-size: 4rem; }
     .btn-saiba                          { font-size: 2.3rem; }
-    body p                              { font-size: 1.6rem; }
-    .section-title                      { font-size: 7rem; }
+    body p                              { font-size: 1.8rem; }
+    .section-title                      { font-size: 8rem; }
     .grey-text                          { font-size: 13px; }
     .price-table .price-header          { font-size: 2.5rem; }
     .price-table .price-price           { font-size: 4rem; }
@@ -79,6 +101,116 @@
 
 }
 /* END FONT SIZES */
+
+/* ROWS PADDING */
+
+@media only screen and (max-width: 767px) {
+
+    #home {
+        padding-top: 60px;
+        padding-bottom: 80px;
+    }
+
+    #about {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    #mensagem,
+    #onde,
+    #plano {
+        padding-bottom: 70px;
+    }
+
+    #mensagem .col-xs-12:first-of-type,
+    #onde .col-xs-12:first-of-type,
+    #plano .col-xs-12:first-of-type {
+        padding-top: 150px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+    #home {
+        padding-top: 80px;
+        padding-bottom: 100px;
+    }
+
+    #about {
+        padding-top: 40px;
+        padding-bottom: 60px;
+    }
+
+    #mensagem,
+    #onde,
+    #plano {
+        padding-bottom: 70px;
+    }
+
+    #mensagem .col-xs-12:first-of-type,
+    #onde .col-xs-12:first-of-type,
+    #plano .col-xs-12:first-of-type {
+        padding-top: 175px;
+    }
+
+
+}
+
+
+@media only screen and (min-width: 993px) and (max-width: 1199px) {
+
+    #home {
+        padding-top: 70px;
+        padding-bottom: 90px;
+    }
+
+    #about {
+        padding-top: 50px;
+        padding-bottom: 70px;
+    }
+
+    #mensagem,
+    #onde,
+    #plano {
+        padding-bottom: 80px;
+    }
+
+    #mensagem .col-xs-12:first-of-type,
+    #onde .col-xs-12:first-of-type,
+    #plano .col-xs-12:first-of-type {
+        padding-top: 220px;
+    }
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+    #home {
+        padding-top: 70px;
+        padding-bottom: 90px;
+    }
+
+    #about {
+        padding-top: 50px;
+        padding-bottom: 70px;
+    }
+
+    #mensagem,
+    #onde,
+    #plano {
+        padding-bottom: 80px;
+    }
+
+    #mensagem .col-xs-12:first-of-type,
+    #onde .col-xs-12:first-of-type,
+    #plano .col-xs-12:first-of-type {
+        padding-top: 220px;
+    }
+
+}
+
+/**/
 
 
 body {
@@ -93,9 +225,8 @@ body {
 
 .section-title {
     position: absolute;
-    top: 10%;
+    top: 50px;
     left: 5%;
-    font-size: 7rem;
 }
 
 .tk-fertigo-script {
@@ -216,7 +347,9 @@ nav ul li {
     display: inline-block;
 }
 
-nav ul li a {
+nav ul li span {
+    cursor: pointer;
+
     display: inline-block;
 
     position: relative;
@@ -234,7 +367,7 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
-nav ul li.active a {
+nav ul li.active span {
     color: rgb(51,51,51);
 }
 
@@ -279,7 +412,6 @@ nav.visible-xs ul li {
 /* END NAV */
 
 .price-table {
-    margin-top: 15rem;
     text-align: center;
 
     font-size: 0;

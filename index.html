@@ -18,27 +18,27 @@
 <nav class="visible-xs">
     <ul>
         <li class="m-nav-moving-bg"></li>
-        <li class="navhome active" onclick="goToHome();"><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
-        <li class="navsobre"       onclick="goToAbout();"><a href="#"><i class="glyphicon glyphicon-info-sign"></i></a></li>
-        <li class="navmsg"         onclick="goToMensagem();"><a href="#"><i class="glyphicon glyphicon-comment"></i></a></li>
-        <li class="navonde"        onclick="goToOnde();"><a href="#"><i class="glyphicon glyphicon-map-marker"></i></a></li>
-        <li class="navplano"       onclick="goToPlano();"><a href="#"><i class="glyphicon glyphicon-ok-sign"></i></a></li>
+        <li class="navhome active" onclick="goToHome();"><span><i class="glyphicon glyphicon-home"></i></span></li>
+        <li class="navsobre"       onclick="goToAbout();"><span><i class="glyphicon glyphicon-info-sign"></i></span></li>
+        <li class="navmsg"         onclick="goToMensagem();"><span><i class="glyphicon glyphicon-comment"></i></span></li>
+        <li class="navonde"        onclick="goToOnde();"><span><i class="glyphicon glyphicon-map-marker"></i></span></li>
+        <li class="navplano"       onclick="goToPlano();"><span><i class="glyphicon glyphicon-ok-sign"></i></span></li>
     </ul>
 </nav>
 
 <nav class="hidden-xs">
     <ul>
         <li class="nav-moving-bg"></li>
-        <li id="navhome"        class="navhome active"  onclick="goToHome();"><a href="#">Início</a></li>
-        <li id="navsobre"       class="navsobre"        onclick="goToAbout();"><a href="#">Sobre</a></li>
-        <li id="navmensagem"    class="navmsg"          onclick="goToMensagem();"><a href="#">Mensagem</a></li>
-        <li id="navonde"        class="navonde"         onclick="goToOnde();"><a href="#">Onde</a></li>
-        <li id="navplano"       class="navplano"        onclick="goToPlano();"><a href="#">Plano</a></li>
+        <li id="navhome"        class="navhome active"  onclick="goToHome();"><span>Início</span></li>
+        <li id="navsobre"       class="navsobre"        onclick="goToAbout();"><span>Sobre</span></li>
+        <li id="navmensagem"    class="navmsg"          onclick="goToMensagem();"><span>Mensagem</span></li>
+        <li id="navonde"        class="navonde"         onclick="goToOnde();"><span>Onde</span></li>
+        <li id="navplano"       class="navplano"        onclick="goToPlano();"><span>Plano</span></li>
     </ul>
 </nav>
 
 <div class="container-fluid" id="content">
-    <div id="home" class="row orange-bg" style=" padding-top: 7rem; padding-bottom: 10rem;">
+    <div id="home" class="row orange-bg">
         <div class="col-xs-12 text-center">
             <p class="sms-title">
                 <span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">SMS</span><span style="font-weight: 100">MARKETING</span>
@@ -50,9 +50,9 @@
         </div>
     </div>
 
-    <div class="row" style="padding-top: 5rem;padding-bottom: 6rem;" id="about">
+    <div id="about" class="row">
         <div class="col-xs-12 col-sm-6">
-            <h3>O que vocês estão oferecendo?</h3>
+            <h3 style="font-weight: 400">O que vocês estão oferecendo?</h3>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales, dui sed convallis vulputate, quam orci vestibulum nisl, quis interdum massa ex quis nulla. Aliquam convallis porta risus non aliquam. Etiam suscipit ullamcorper aliquet. Vivamus fringilla, massa id lacinia ullamcorper, ligula ipsum finibus lorem, hendrerit finibus turpis sem in sem. Nunc id libero et nulla accumsan blandit gravida et velit. Donec volutpat, dui vel interdum volutpat, enim leo fermentum risus, ac imperdiet augue ante in lectus. Aenean accumsan malesuada interdum. Duis id urna et magna sollicitudin varius nec quis leo. Nulla porttitor enim ut urna ultrices, quis tempus purus scelerisque. Donec eget tristique mi.
             </p>
@@ -66,7 +66,7 @@
     </div>
 
     <div class="row orange-bg" id="mensagem">
-        <div class="col-xs-12" style="padding-top: 7rem; padding-bottom: 10rem;">
+        <div class="col-xs-12">
             <div class="section-title">
                 <div class="stepcircle">1</div><span>MENSAGEM</span>
             </div>
@@ -97,7 +97,7 @@
 
 
     <div class="row" id="onde">
-        <div class="col-xs-12" style="padding-top: 7rem; padding-bottom: 10rem;">
+        <div class="col-xs-12">
             <div class="section-title">
                 <div class="stepcircle i">2</div><span>ONDE</span>
             </div>
@@ -127,7 +127,7 @@
     </div>
 
     <div class="row orange-bg" id="plano">
-        <div class="col-xs-12" style="padding-top: 7rem; padding-bottom: 10rem;">
+        <div class="col-xs-12">
             <div class="section-title">
                 <div class="stepcircle">3</div><span>PLANO</span>
             </div>
