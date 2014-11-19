@@ -15,82 +15,25 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<script type="text/javascript">
-    $(function(){
-        var homeC = $('div#home').offset().top - $('nav').outerHeight();
-        var homeC2 = homeC + $('div#home').outerHeight();
+<nav class="visible-xs">
+    <ul>
+        <li class="m-nav-moving-bg"></li>
+        <li class="navhome active" onclick="goToHome();"><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
+        <li class="navsobre"       onclick="goToAbout();"><a href="#"><i class="glyphicon glyphicon-info-sign"></i></a></li>
+        <li class="navmsg"         onclick="goToMensagem();"><a href="#"><i class="glyphicon glyphicon-comment"></i></a></li>
+        <li class="navonde"        onclick="goToOnde();"><a href="#"><i class="glyphicon glyphicon-map-marker"></i></a></li>
+        <li class="navplano"       onclick="goToPlano();"><a href="#"><i class="glyphicon glyphicon-ok-sign"></i></a></li>
+    </ul>
+</nav>
 
-        var sobreC = $('div#about').offset().top - $('nav').outerHeight();
-        var sobreC2 = sobreC + $('div#about').outerHeight();
-
-        var mensagemC = $('div#mensagem').offset().top - $('nav').outerHeight();
-        var mensagemC2 = mensagemC + $('div#mensagem').outerHeight();
-
-        var ondeC = $('div#onde').offset().top - $('nav').outerHeight();
-        var ondeC2 = ondeC + $('div#onde').outerHeight();
-
-        var planoC = $('div#plano').offset().top - $('nav').outerHeight();
-        var planoC2 = planoC + $('div#plano').outerHeight();
-
-        $(window).scroll(function(){
-            if( (homeC <= $(window).scrollTop()) && (homeC2 >= $(window).scrollTop()) ){
-                $('.active').removeClass('active');
-                $('#navhome').addClass('active');
-                goToActive();
-            } else if ( (sobreC <= $(window).scrollTop()) && (sobreC2 >= $(window).scrollTop()) ){
-                $('.active').removeClass('active');
-                $('#navsobre').addClass('active');
-                goToActive();
-            } else if ( (mensagemC <= $(window).scrollTop()) && (mensagemC2 >= $(window).scrollTop()) ){
-                $('.active').removeClass('active');
-                $('#navmensagem').addClass('active');
-                goToActive();
-            } else if ( (ondeC <= $(window).scrollTop()) && (ondeC2 >= $(window).scrollTop()) ){
-                $('.active').removeClass('active');
-                $('#navonde').addClass('active');
-                goToActive();
-            } else if ( (planoC <= $(window).scrollTop()) && (planoC2 >= $(window).scrollTop()) ){
-                $('.active').removeClass('active');
-                $('#navplano').addClass('active');
-                goToActive();
-            }
-        });
-    });
-
-    var goToActive = function() {
-        $('.nav-moving-bg').css('left', $('.active').offset().left);
-        $('.nav-moving-bg').css('width', $('.active').outerWidth());
-    }
-
-    var goToHome = function () {
-        $('body').animate({scrollTop: 0}, 500);
-    }
-
-    var goToAbout = function () {
-        $('body').animate({scrollTop: $('div#about').offset().top - $('nav').outerHeight()}, 500);
-    }
-
-    var goToMensagem = function () {
-        $('body').animate({scrollTop: $('div#mensagem').offset().top - $('nav').outerHeight()}, 500);
-    }
-
-    var goToOnde = function () {
-        $('body').animate({scrollTop: $('div#onde').offset().top - $('nav').outerHeight()}, 500);
-    }
-
-    var goToPlano = function () {
-        $('body').animate({scrollTop: $('div#plano').offset().top - $('nav').outerHeight()}, 500);
-    }
-</script>
-
-<nav>
+<nav class="hidden-xs">
     <ul>
         <li class="nav-moving-bg"></li>
-        <li class="active" id="navhome" onclick="goToHome();"><a href="#">Início</a></li>
-        <li id="navsobre" onclick="goToAbout();"><a href="#">Sobre</a></li>
-        <li id="navmensagem" onclick="goToMensagem();"><a href="#">Mensagem</a></li>
-        <li id="navonde" onclick="goToOnde();"><a href="#">Onde</a></li>
-        <li id="navplano" onclick="goToPlano();"><a href="#">Plano</a></li>
+        <li id="navhome"        class="navhome active"  onclick="goToHome();"><a href="#">Início</a></li>
+        <li id="navsobre"       class="navsobre"        onclick="goToAbout();"><a href="#">Sobre</a></li>
+        <li id="navmensagem"    class="navmsg"          onclick="goToMensagem();"><a href="#">Mensagem</a></li>
+        <li id="navonde"        class="navonde"         onclick="goToOnde();"><a href="#">Onde</a></li>
+        <li id="navplano"       class="navplano"        onclick="goToPlano();"><a href="#">Plano</a></li>
     </ul>
 </nav>
 
@@ -248,28 +191,7 @@
 
 </div>
 
-<script type="text/javascript">
-    $(function(){
-
-        $('.stepcircle').each(function(){
-            if ($(this).width() > $(this).height()){
-                $(this).css('height', $(this).width());
-            } else {
-                $(this).css('width', $(this).height());
-            }
-        });
-
-        $('#content').css('margin-top', $('nav').outerHeight());
-
-        $('.nav-moving-bg').css({
-            height: $('nav').outerHeight() - 1,
-            left: $('.active').offset().left,
-            width: $('.active').outerWidth() -1
-        });
-
-
-    });
-</script>
+<script type="text/javascript" src="js/javascript.js"></script>
 
 </body>
 </html>
