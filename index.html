@@ -29,158 +29,135 @@
 <nav class="hidden-xs">
     <ul>
         <li class="nav-moving-bg"></li>
-        <li id="navhome"        class="navhome active"  onclick="goToHome();"><span>Início</span></li>
-        <li id="navsobre"       class="navsobre"        onclick="goToAbout();"><span>Sobre</span></li>
-        <li id="navmensagem"    class="navmsg"          onclick="goToMensagem();"><span>Mensagem</span></li>
-        <li id="navonde"        class="navonde"         onclick="goToOnde();"><span>Onde</span></li>
-        <li id="navplano"       class="navplano"        onclick="goToPlano();"><span>Plano</span></li>
+        <li class="navhome active"  onclick="goToHome();"><span>Início</span></li>
+        <li class="navsobre"        onclick="goToAbout();"><span>Sobre</span></li>
+        <li class="navmsg"          onclick="goToMensagem();"><span>Mensagem</span></li>
+        <li class="navonde"         onclick="goToOnde();"><span>Onde</span></li>
+        <li class="navplano"        onclick="goToPlano();"><span>Plano</span></li>
     </ul>
 </nav>
 
 <div class="container-fluid" id="content">
     <div id="home" class="row orange-bg">
-        <div class="col-xs-12 text-center">
-            <p class="sms-title">
-                <span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">SMS</span><span style="font-weight: 100">MARKETING</span>
-            </p>
-            <p class="sms-subtitle">Divulgue de maneria rápida, fácil e eficiente.</p>
-            <br/>
-            <br/>
-            <a href="#" class="btn-saiba" onclick="goToAbout();"><span>Saiba Mais</span></a>
+        <div class="container" style="height: 100%">
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <p class="sms-title">
+                        <span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">SMS</span><span style="font-weight: 100">MARKETING</span>
+                    </p>
+                    <p class="sms-subtitle">Divulgue de maneria rápida, fácil e eficiente.</p>
+                    <br/>
+                    <br/>
+                    <a href="#" class="btn-saiba" onclick="goToAbout();"><span>Saiba Mais</span></a>
+                </div>
+            </div>
         </div>
     </div>
 
     <div id="about" class="row">
-        <div class="col-xs-12 col-sm-6">
-            <h3 style="font-weight: 400">O que vocês estão oferecendo?</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales, dui sed convallis vulputate, quam orci vestibulum nisl, quis interdum massa ex quis nulla. Aliquam convallis porta risus non aliquam. Etiam suscipit ullamcorper aliquet. Vivamus fringilla, massa id lacinia ullamcorper, ligula ipsum finibus lorem, hendrerit finibus turpis sem in sem. Nunc id libero et nulla accumsan blandit gravida et velit. Donec volutpat, dui vel interdum volutpat, enim leo fermentum risus, ac imperdiet augue ante in lectus. Aenean accumsan malesuada interdum. Duis id urna et magna sollicitudin varius nec quis leo. Nulla porttitor enim ut urna ultrices, quis tempus purus scelerisque. Donec eget tristique mi.
-            </p>
-        </div>
-        <div class="col-xs-12 col-sm-6">
-            <h3 class="hidden-xs">&nbsp;</h3>
-            <p>
-                Nunc congue non justo ac luctus. Vivamus dolor velit, tristique nec laoreet vitae, vestibulum quis nibh. In mollis placerat massa, vel tincidunt est efficitur ac. Sed tristique, neque eget fringilla tempus, augue neque porttitor nibh, non malesuada metus mauris ut magna. Vivamus lacinia, mauris quis venenatis suscipit, diam justo posuere ex, quis auctor odio arcu vitae neque. Proin vulputate in lorem in ornare. Aenean ac mauris sed diam ultricies rutrum consequat quis tortor. Praesent ut porta felis, eget elementum lorem. Quisque lacinia pharetra libero, sodales aliquet massa.
-            </p>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <h3 style="font-weight: 400">O que vocês estão oferecendo?</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales, dui sed convallis vulputate, quam orci vestibulum nisl, quis interdum massa ex quis nulla. Aliquam convallis porta risus non aliquam. Etiam suscipit ullamcorper aliquet. Vivamus fringilla, massa id lacinia ullamcorper, ligula ipsum finibus lorem, hendrerit finibus turpis sem in sem. Nunc id libero et nulla accumsan blandit gravida et velit. Donec volutpat, dui vel interdum volutpat, enim leo fermentum risus, ac imperdiet augue ante in lectus. Aenean accumsan malesuada interdum. Duis id urna et magna sollicitudin varius nec quis leo. Nulla porttitor enim ut urna ultrices, quis tempus purus scelerisque. Donec eget tristique mi.
+                    </p>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <h3 class="hidden-xs">&nbsp;</h3>
+                    <p>
+                        Nunc congue non justo ac luctus. Vivamus dolor velit, tristique nec laoreet vitae, vestibulum quis nibh. In mollis placerat massa, vel tincidunt est efficitur ac. Sed tristique, neque eget fringilla tempus, augue neque porttitor nibh, non malesuada metus mauris ut magna. Vivamus lacinia, mauris quis venenatis suscipit, diam justo posuere ex, quis auctor odio arcu vitae neque. Proin vulputate in lorem in ornare. Aenean ac mauris sed diam ultricies rutrum consequat quis tortor. Praesent ut porta felis, eget elementum lorem. Quisque lacinia pharetra libero, sodales aliquet massa.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="row orange-bg" id="mensagem">
-        <div class="col-xs-12">
-            <div class="section-title">
-                <div class="stepcircle">1</div><span>MENSAGEM</span>
-            </div>
-            <div>
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-title">
+                        <div class="stepcircle">1</div><span>MENSAGEM</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
 
     <div class="row" id="onde">
-        <div class="col-xs-12">
-            <div class="section-title">
-                <div class="stepcircle i">2</div><span>ONDE</span>
-            </div>
-            <div>
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
-                <br/>
-                &nbsp;
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-title">
+                        <div class="stepcircle i">2</div><span>ONDE</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <div class="row orange-bg" id="plano">
-        <div class="col-xs-12">
-            <div class="section-title">
-                <div class="stepcircle">3</div><span>PLANO</span>
-            </div>
-
-            <div class="price-table">
-
-                <div class="price-item">
-                    <div class="price-header"><span>Básico</span></div>
-                    <div class="price-price-border">
-                        <div class="price-price"><span>250</span></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-title">
+                        <div class="stepcircle">3</div><span>PLANO</span>
                     </div>
-                    <div class="price-body">
-                        <ul>
-                            <li>10.000 SMS</li>
-                            <li>10.000 SMS</li>
-                            <li>10.000 SMS</li>
-                        </ul>
+
+                    <div class="price-table">
+
+                        <div class="price-item">
+                            <div class="price-header"><span>Básico</span></div>
+                            <div class="price-price-border">
+                                <div class="price-price"><span>250</span></div>
+                            </div>
+                            <div class="price-body">
+                                <ul>
+                                    <li>10.000 SMS</li>
+                                    <li>10.000 SMS</li>
+                                    <li>10.000 SMS</li>
+                                </ul>
+                            </div>
+                            <div class="price-footer">Contratar</div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-header"><span>Intermediário</span></div>
+                            <div class="price-price-border">
+                                <div class="price-price"><span>500</span></div>
+                            </div>
+                            <div class="price-body">
+                                <ul>
+                                    <li>50.000 SMS</li>
+                                    <li>10.000 SMS</li>
+                                    <li>10.000 SMS</li>
+                                </ul>
+                            </div>
+                            <div class="price-footer">Contratar</div>
+                        </div>
+
+                        <div class="price-item">
+                            <div class="price-header"><span>Massivo</span></div>
+                            <div class="price-price-border">
+                                <div class="price-price"><span>1000</span></div>
+                            </div>
+                            <div class="price-body">
+                                <ul>
+                                    <li>100.000 SMS</li>
+                                    <li>10.000 SMS</li>
+                                    <li>10.000 SMS</li>
+                                </ul>
+                            </div>
+                            <div class="price-footer">Contratar</div>
+                        </div>
+
                     </div>
-                    <div class="price-footer">Contratar</div>
                 </div>
-
-                <div class="price-item">
-                    <div class="price-header"><span>Intermediário</span></div>
-                    <div class="price-price-border">
-                        <div class="price-price"><span>500</span></div>
-                    </div>
-                    <div class="price-body">
-                        <ul>
-                            <li>50.000 SMS</li>
-                            <li>10.000 SMS</li>
-                            <li>10.000 SMS</li>
-                        </ul>
-                    </div>
-                    <div class="price-footer">Contratar</div>
-                </div>
-
-                <div class="price-item">
-                    <div class="price-header"><span>Massivo</span></div>
-                    <div class="price-price-border">
-                        <div class="price-price"><span>1000</span></div>
-                    </div>
-                    <div class="price-body">
-                        <ul>
-                            <li>100.000 SMS</li>
-                            <li>10.000 SMS</li>
-                            <li>10.000 SMS</li>
-                        </ul>
-                    </div>
-                    <div class="price-footer">Contratar</div>
-                </div>
-
             </div>
         </div>
+
     </div>
 
     <footer class="row">

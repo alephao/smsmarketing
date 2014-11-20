@@ -5,22 +5,29 @@
 
 $(function(){
 
-    var homeC = $('div#home').offset().top - $('nav').outerHeight();
-    var homeC2 = homeC + $('div#home').outerHeight();
+    var homeC;    var homeC2;
+    var sobreC;    var sobreC2;
+    var mensagemC;    var mensagemC2;
+    var ondeC;    var ondeC2;
+    var planoC;    var planoC2;
 
-    var sobreC = $('div#about').offset().top - $('nav').outerHeight();
-    var sobreC2 = sobreC + $('div#about').outerHeight();
+    var setDivsHeight = function() {
+        $('.orange-bg, #onde').each(function(){
+            if ( $(window).height() > $(this).outerHeight() ) {
 
-    var mensagemC = $('div#mensagem').offset().top - $('nav').outerHeight();
-    var mensagemC2 = mensagemC + $('div#mensagem').outerHeight();
+                $(this).css({
+                    height: ($(window).height() - ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight()))
+                });
 
-    var ondeC = $('div#onde').offset().top - $('nav').outerHeight();
-    var ondeC2 = ondeC + $('div#onde').outerHeight();
+            }
+        });
+    }
 
-    var planoC = $('div#plano').offset().top - $('nav').outerHeight();
-    var planoC2 = planoC + $('div#plano').outerHeight();
+    setDivsHeight();
 
     $(window).resize(function(){
+
+        setDivsHeight();
 
         $('.stepcircle').each(function(){
             if ($(this).width() > $(this).height()){
@@ -49,28 +56,36 @@ $(function(){
     });
 
     $(window).scroll(function(){
-        if( (homeC <= $(window).scrollTop()) && (homeC2 >= $(window).scrollTop()) ){
-            $('.active').removeClass('active');
+        homeC = $('#home').offset().top - ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight());
+        homeC2 = homeC + $('#home').outerHeight();
 
-            $(window).width() < 768 ? $('nav.visible-xs .navhome').addClass('active') : $('nav.hidden-xs .navhome').addClass('active');
-            goToActive();
-        } else if ( (sobreC <= $(window).scrollTop()) && (sobreC2 >= $(window).scrollTop()) ){
-            $('.active').removeClass('active');
+        sobreC = $('#about').offset().top - ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight());
+        sobreC2 = sobreC + $('#about').outerHeight();
+
+        mensagemC = $('#mensagem').offset().top - ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight());
+        mensagemC2 = mensagemC + $('#mensagem').outerHeight();
+
+        ondeC = $('#onde').offset().top - ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight());
+        ondeC2 = ondeC + $('#onde').outerHeight();
+
+        planoC = $('#plano').offset().top - ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight());
+        planoC2 = planoC + $('#plano').outerHeight();
+
+        $('.active').removeClass('active');
+
+        if ( (sobreC >= $(window).scrollTop()) && (sobreC2 < $(window).scrollTop() + $(window).height()) || (sobreC <= $(window).scrollTop()) && (sobreC2 > $(window).scrollTop())){
             $(window).width() < 768 ? $('nav.visible-xs .navsobre').addClass('active') : $('nav.hidden-xs .navsobre').addClass('active');
-            goToActive();
-        } else if ( (mensagemC <= $(window).scrollTop()) && (mensagemC2 >= $(window).scrollTop()) ){
-            $('.active').removeClass('active');
+        } else if ( (mensagemC <= $(window).scrollTop()) && (mensagemC2 > $(window).scrollTop()) ){
             $(window).width() < 768 ? $('nav.visible-xs .navmsg').addClass('active') : $('nav.hidden-xs .navmsg').addClass('active');
-            goToActive();
-        } else if ( (ondeC <= $(window).scrollTop()) && (ondeC2 >= $(window).scrollTop()) ){
-            $('.active').removeClass('active');
+        } else if ( (ondeC <= $(window).scrollTop()) && (ondeC2 > $(window).scrollTop()) ){
             $(window).width() < 768 ? $('nav.visible-xs .navonde').addClass('active') : $('nav.hidden-xs .navonde').addClass('active');
-            goToActive();
-        } else if ( (planoC <= $(window).scrollTop()) && (planoC2 >= $(window).scrollTop()) ){
-            $('.active').removeClass('active');
+        } else if ( (planoC <= $(window).scrollTop()) && (planoC2 > $(window).scrollTop()) ){
             $(window).width() < 768 ? $('nav.visible-xs .navplano').addClass('active') : $('nav.hidden-xs .navplano').addClass('active');
-            goToActive();
+        } else {
+            $(window).width() < 768 ? $('nav.visible-xs .navhome').addClass('active') : $('nav.hidden-xs .navhome').addClass('active');
         }
+
+        goToActive();
     });
 
     $(window).resize();
@@ -91,28 +106,28 @@ var goToHome = function () {
 
 var goToAbout = function () {
     $('body').animate({
-        scrollTop: $('div#about').offset().top -
+        scrollTop: $('#about').offset().top -
                   ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight())
     }, 500);
 }
 
 var goToMensagem = function () {
     $('body').animate({
-        scrollTop:  $('div#mensagem').offset().top -
+        scrollTop:  $('#mensagem').offset().top -
                    ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight())
     }, 500);
 }
 
 var goToOnde = function () {
     $('body').animate({
-        scrollTop: $('div#onde').offset().top -
+        scrollTop: $('#onde').offset().top -
                   ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight())
     }, 500);
 }
 
 var goToPlano = function () {
     $('body').animate({
-        scrollTop: $('div#plano').offset().top -
+        scrollTop: $('#plano').offset().top -
                   ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight())
     }, 500);
 }

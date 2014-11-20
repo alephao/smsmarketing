@@ -102,14 +102,21 @@ p {
 }
 /* END FONT SIZES */
 
-/* ROWS PADDING */
+/* ROWS PADDING AND POSITIONING */
+
+#home {
+    min-height: 350px;
+}
+
+#home .row {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    -webkit-transform: translate(-50%,-45%);-moz-transform: translate(-50%,-45%);-ms-transform: translate(-50%,-45%);-o-transform: translate(-50%,-45%);transform: translate(-50%,-45%);
+}
 
 @media only screen and (max-width: 767px) {
-
-    #home {
-        padding-top: 60px;
-        padding-bottom: 80px;
-    }
 
     #about {
         padding-top: 40px;
@@ -131,11 +138,6 @@ p {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
-
-    #home {
-        padding-top: 80px;
-        padding-bottom: 100px;
-    }
 
     #about {
         padding-top: 40px;
@@ -160,11 +162,6 @@ p {
 
 @media only screen and (min-width: 993px) and (max-width: 1199px) {
 
-    #home {
-        padding-top: 70px;
-        padding-bottom: 90px;
-    }
-
     #about {
         padding-top: 50px;
         padding-bottom: 70px;
@@ -185,11 +182,6 @@ p {
 }
 
 @media only screen and (min-width: 1200px) {
-
-    #home {
-        padding-top: 70px;
-        padding-bottom: 90px;
-    }
 
     #about {
         padding-top: 50px;
