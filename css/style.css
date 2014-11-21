@@ -207,6 +207,10 @@ p {
 
 /**/
 
+[name="estados-brasil"] {
+    margin: 10px 20px;
+}
+
 
 body {
     font-family: 'Roboto', sans-serif;
