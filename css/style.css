@@ -105,15 +105,13 @@ p {
 /* ROWS PADDING AND POSITIONING */
 
 #home {
-    min-height: 350px;
+    min-height: 400px;
 }
 
 #home .row {
     position: absolute;
     top: 50%;
     left: 50%;
-
-    -webkit-transform: translate(-50%,-45%);-moz-transform: translate(-50%,-45%);-ms-transform: translate(-50%,-45%);-o-transform: translate(-50%,-45%);transform: translate(-50%,-45%);
 }
 
 @media only screen and (max-width: 767px) {
@@ -129,9 +127,9 @@ p {
         padding-bottom: 70px;
     }
 
-    #mensagem .col-xs-12:first-of-type,
-    #onde .col-xs-12:first-of-type,
-    #plano .col-xs-12:first-of-type {
+    #mensagem .section-title-padding,
+    #onde .section-title-padding,
+    #plano .section-title-padding {
         padding-top: 150px;
     }
 
@@ -150,9 +148,9 @@ p {
         padding-bottom: 70px;
     }
 
-    #mensagem .col-xs-12:first-of-type,
-    #onde .col-xs-12:first-of-type,
-    #plano .col-xs-12:first-of-type {
+    #mensagem .section-title-padding,
+    #onde .section-title-padding,
+    #plano .section-title-padding {
         padding-top: 175px;
     }
 
@@ -173,9 +171,9 @@ p {
         padding-bottom: 80px;
     }
 
-    #mensagem .col-xs-12:first-of-type,
-    #onde .col-xs-12:first-of-type,
-    #plano .col-xs-12:first-of-type {
+    #mensagem .section-title-padding,
+    #onde .section-title-padding,
+    #plano .section-title-padding {
         padding-top: 220px;
     }
 
@@ -194,9 +192,9 @@ p {
         padding-bottom: 80px;
     }
 
-    #mensagem .col-xs-12:first-of-type,
-    #onde .col-xs-12:first-of-type,
-    #plano .col-xs-12:first-of-type {
+    #mensagem .section-title-padding,
+    #onde .section-title-padding,
+    #plano .section-title-padding {
         padding-top: 220px;
     }
 
@@ -239,6 +237,10 @@ body {
 }
 
 .btn-saiba {
+    cursor: pointer;
+
+    background-color: transparent;
+
     color: #fff;
 
     border: 1px solid white;
@@ -277,6 +279,24 @@ body {
     z-index: 1;
 }
 
+.btn-saiba-i {
+    color: rgb(51,51,51);
+    border-color: rgb(51,51,51);
+}
+
+.btn-saiba-i::before {
+    background-color: rgb(51,51,51);
+}
+
+.btn-saiba-i:hover {
+    color: #fff;
+}
+
+button,
+textarea {
+    outline: none;
+}
+
 .stepcircle {
     font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 
@@ -295,6 +315,38 @@ body {
     background-color: rgb(51,51,51);
     border-radius: 50%;
     color: #fff;
+}
+
+.title-hint {
+    padding-top: 0; margin-top: 0; margin-bottom: 50px
+}
+
+ul.lista-estados {
+    padding: 0;
+    list-style: none;
+}
+
+@media only screen and (min-width: 768px){
+    .xs-fr {
+        float: right;
+    }
+}
+
+textarea {
+    resize: none;
+    border: none;
+    width: 50%;
+    height: 200px;
+    color: rgb(51,51,51);
+    font-weight: 400;
+
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 767px) {
+    textarea {
+        width: 90%;
+    }
 }
 
 footer {
@@ -410,9 +462,10 @@ nav.visible-xs ul li {
 }
 
 .price-item {
-    width: 250px;
+    width: 100%;
+    max-width: 250px;
     display: inline-block;
-    margin: 0 1rem;
+    margin: 0 0 20px 0;
 }
 
 .price-table .price-header{
@@ -479,6 +532,8 @@ nav.visible-xs ul li {
 .price-table .price-footer {
     background-color: rgb(51,51,51);
     color: #fff;
+
+    cursor: pointer;
 
     padding: 1rem 0;
 }

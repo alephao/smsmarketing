@@ -12,7 +12,7 @@ $(function(){
     var planoC;    var planoC2;
 
     var setDivsHeight = function() {
-        $('.orange-bg, #onde').each(function(){
+        $('#home').each(function(){
             if ( $(window).height() > $(this).outerHeight() ) {
 
                 $(this).css({
@@ -23,12 +23,14 @@ $(function(){
         });
     }
 
-    setDivsHeight();
+    var centralizeThis = function (element) {
+        $(element).css({
+            marginTop:  $(element).outerHeight()/-2,
+            marginLeft:  $(element).outerWidth()/-2
+        });
+    }
 
-    $(window).resize(function(){
-
-        setDivsHeight();
-
+    var setStepCircleSize = function() {
         $('.stepcircle').each(function(){
             if ($(this).width() > $(this).height()){
                 $(this).css('height', $(this).width());
@@ -36,9 +38,13 @@ $(function(){
                 $(this).css('width', $(this).height());
             }
         });
+    }
 
+    var setContentMarginTop = function() {
         $(window).width() < 768 ? $('#content').css('margin-top', $('nav.visible-xs').outerHeight()) : $('#content').css('margin-top', $('nav.hidden-xs').outerHeight());
+    }
 
+    var setNavStyle = function () {
         $('.nav-moving-bg').css({
             height: $('nav.hidden-xs').outerHeight() - 1,
             left: $('.active').offset().left,
@@ -50,10 +56,18 @@ $(function(){
             left: $('.active').offset().left,
             width: $('.active').outerWidth() -1
         });
+    }
 
+    var executeFunctions = function () {
+        setDivsHeight();
+        centralizeThis($('#home .row'));
+        setStepCircleSize();
+        setContentMarginTop();
+        setNavStyle();
         $(window).scroll();
+    }
 
-    });
+    executeFunctions();
 
     $(window).scroll(function(){
         homeC = $('#home').offset().top - ($(window).width() < 768 ? $('nav.visible-xs').outerHeight() : $('nav.hidden-xs').outerHeight());
@@ -88,16 +102,26 @@ $(function(){
         goToActive();
     });
 
+    $(window).resize(function(){
+
+        executeFunctions();
+
+    });
+
     $(window).resize();
 
 });
 
 var goToActive = function() {
-    $('.nav-moving-bg').css('left', $('.active').offset().left);
-    $('.nav-moving-bg').css('width', $('.active').outerWidth());
+    $('.nav-moving-bg').css({
+        left: $('.active').offset().left,
+        width: $('.active').outerWidth()
+    });
 
-    $('.m-nav-moving-bg').css('left', $('.active').offset().left);
-    $('.m-nav-moving-bg').css('width', $('.active').outerWidth());
+    $('.m-nav-moving-bg').css({
+        left: $('.active').offset().left,
+        width: $('.active').outerWidth()
+    });
 }
 
 var goToHome = function () {

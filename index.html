@@ -48,7 +48,7 @@
                     <p class="sms-subtitle">Divulgue de maneria rápida, fácil e eficiente.</p>
                     <br/>
                     <br/>
-                    <a href="#" class="btn-saiba" onclick="goToAbout();"><span>Saiba Mais</span></a>
+                    <button class="btn-saiba" onclick="goToAbout();"><span>Saiba Mais</span></button>
                 </div>
             </div>
         </div>
@@ -58,16 +58,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
-                    <h3 style="font-weight: 400">O que vocês estão oferecendo?</h3>
+                    <h3 style="font-weight: 400">O SMS Marketing</h3>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales, dui sed convallis vulputate, quam orci vestibulum nisl, quis interdum massa ex quis nulla. Aliquam convallis porta risus non aliquam. Etiam suscipit ullamcorper aliquet. Vivamus fringilla, massa id lacinia ullamcorper, ligula ipsum finibus lorem, hendrerit finibus turpis sem in sem. Nunc id libero et nulla accumsan blandit gravida et velit. Donec volutpat, dui vel interdum volutpat, enim leo fermentum risus, ac imperdiet augue ante in lectus. Aenean accumsan malesuada interdum. Duis id urna et magna sollicitudin varius nec quis leo. Nulla porttitor enim ut urna ultrices, quis tempus purus scelerisque. Donec eget tristique mi.
+                        No Brasil o número de telefones celulares já ultrapassa a quantidade de habitantes no país. O sms tem uma taxa de leitura extremamente alta e é lido pouco tempo após ser recebido. É uma ferramenta de marketing poderosa que pode trazer resultados rápidos e até instantâneos, ajudando a fechar vendas e a conseguir novos clientes.
                     </p>
                 </div>
                 <div class="col-xs-12 col-sm-6">
                     <h3 class="hidden-xs">&nbsp;</h3>
                     <p>
-                        Nunc congue non justo ac luctus. Vivamus dolor velit, tristique nec laoreet vitae, vestibulum quis nibh. In mollis placerat massa, vel tincidunt est efficitur ac. Sed tristique, neque eget fringilla tempus, augue neque porttitor nibh, non malesuada metus mauris ut magna. Vivamus lacinia, mauris quis venenatis suscipit, diam justo posuere ex, quis auctor odio arcu vitae neque. Proin vulputate in lorem in ornare. Aenean ac mauris sed diam ultricies rutrum consequat quis tortor. Praesent ut porta felis, eget elementum lorem. Quisque lacinia pharetra libero, sodales aliquet massa.
+
                     </p>
+
+                    <button class="btn-saiba btn-saiba-i" onclick="goToMensagem();"><span>Ir para o primeiro passo</span></button>
                 </div>
             </div>
         </div>
@@ -76,10 +78,25 @@
     <div class="row orange-bg" id="mensagem">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 section-title-padding">
                     <div class="section-title">
                         <div class="stepcircle">1</div><span>MENSAGEM</span>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h3 class="title-hint">Escreva aqui a mensagem que deseja enviar por sms. (Até 160 caracteres)</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <textarea maxlength="160"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center" style="padding-top: 50px">
+                    <button class="btn-saiba" onclick="goToOnde();"><span>Próximo Passo</span></button>
                 </div>
             </div>
         </div>
@@ -89,10 +106,57 @@
     <div class="row" id="onde">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 section-title-padding">
                     <div class="section-title">
                         <div class="stepcircle i">2</div><span>ONDE</span>
                     </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h3 class="title-hint">Escolha para quais estados deseja mandar a mensagem.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <ul class="lista-estados xs-fr">
+                        <li><input name="estados" type="checkbox"/>Acre (AC)</li>
+                        <li><input name="estados" type="checkbox"/>Alagoas (AL)</li>
+                        <li><input name="estados" type="checkbox"/>Amapá (AP)</li>
+                        <li><input name="estados" type="checkbox"/>Amazonas (AM)</li>
+                        <li><input name="estados" type="checkbox"/>Bahia (BA)</li>
+                        <li><input name="estados" type="checkbox"/>Ceará (CE)</li>
+                        <li><input name="estados" type="checkbox"/>Distrito Federal (DF)</li>
+                        <li><input name="estados" type="checkbox"/>Espírito Santo (ES)</li>
+                        <li><input name="estados" type="checkbox"/>Goiás (GO)</li>
+                        <li><input name="estados" type="checkbox"/>Maranhão (MA)</li>
+                        <li><input name="estados" type="checkbox"/>Mato Grosso (MT)</li>
+                        <li><input name="estados" type="checkbox"/>Mato Grosso do Sul (MS)</li>
+                        <li><input name="estados" type="checkbox"/>Minas Gerais (MG)</li>
+                        <li><input name="estados" type="checkbox"/>Pará (PA)</li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <ul class="lista-estados">
+                        <li><input name="estados" type="checkbox"/>Paraíba (PB)</li>
+                        <li><input name="estados" type="checkbox"/>Paraná (PR)</li>
+                        <li><input name="estados" type="checkbox"/>Pernambuco (PE)</li>
+                        <li><input name="estados" type="checkbox"/>Piauí (PI)</li>
+                        <li><input name="estados" type="checkbox"/>Rio de Janeiro (RJ)</li>
+                        <li><input name="estados" type="checkbox"/>Rio Grande do Norte (RN)</li>
+                        <li><input name="estados" type="checkbox"/>Rio Grande do Sul (RS)</li>
+                        <li><input name="estados" type="checkbox"/>Rondônia (RO)</li>
+                        <li><input name="estados" type="checkbox"/>Roraima (RR)</li>
+                        <li><input name="estados" type="checkbox"/>Santa Catarina (SC)</li>
+                        <li><input name="estados" type="checkbox"/>São Paulo (SP)</li>
+                        <li><input name="estados" type="checkbox"/>Sergipe (SE)</li>
+                        <li><input name="estados" type="checkbox"/>Tocantins (TO)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center" style="padding-top: 50px">
+                    <button class="btn-saiba btn-saiba-i" onclick="goToPlano();"><span>Próximo Passo</span></button>
                 </div>
             </div>
         </div>
@@ -101,13 +165,20 @@
     <div class="row orange-bg" id="plano">
         <div class="container">
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 section-title-padding">
                     <div class="section-title">
                         <div class="stepcircle">3</div><span>PLANO</span>
                     </div>
-
-                    <div class="price-table">
-
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <h3 class="title-hint">Escolha o plano que deseja contratar.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="price-table">
+                    <div class="col-xs-12 col-sm-4">
                         <div class="price-item">
                             <div class="price-header"><span>Básico</span></div>
                             <div class="price-price-border">
@@ -116,13 +187,15 @@
                             <div class="price-body">
                                 <ul>
                                     <li>10.000 SMS</li>
-                                    <li>10.000 SMS</li>
-                                    <li>10.000 SMS</li>
+                                    <li>Até 2 estados</li>
+                                    <li>Não pode escolher para quais bairros enviar</li>
                                 </ul>
                             </div>
                             <div class="price-footer">Contratar</div>
                         </div>
+                    </div>
 
+                    <div class="col-xs-12 col-sm-4">
                         <div class="price-item">
                             <div class="price-header"><span>Intermediário</span></div>
                             <div class="price-price-border">
@@ -131,13 +204,15 @@
                             <div class="price-body">
                                 <ul>
                                     <li>50.000 SMS</li>
-                                    <li>10.000 SMS</li>
-                                    <li>10.000 SMS</li>
+                                    <li>Até 5 estados</li>
+                                    <li>Pode escolher para quais bairros enviar</li>
                                 </ul>
                             </div>
                             <div class="price-footer">Contratar</div>
                         </div>
+                    </div>
 
+                    <div class="col-xs-12 col-sm-4">
                         <div class="price-item">
                             <div class="price-header"><span>Massivo</span></div>
                             <div class="price-price-border">
@@ -146,14 +221,14 @@
                             <div class="price-body">
                                 <ul>
                                     <li>100.000 SMS</li>
-                                    <li>10.000 SMS</li>
-                                    <li>10.000 SMS</li>
+                                    <li>Até 27 estados</li>
+                                    <li>Pode escolher para quais bairros enviar</li>
                                 </ul>
                             </div>
                             <div class="price-footer">Contratar</div>
                         </div>
-
                     </div>
+
                 </div>
             </div>
         </div>
@@ -163,7 +238,7 @@
     <footer class="row">
         SMS Marketing &copy; 2014
         <br/>
-        Site por <a href="http://heptagon.com.br">Heptagon TI Ltda.</a>
+        Site desenvolvido por <a href="http://heptagon.com.br">Heptagon TI Ltda.</a>
     </footer>
 
 </div>
