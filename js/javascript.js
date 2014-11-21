@@ -66,7 +66,6 @@ $(function(){
         setNavStyle();
         $(window).scroll();
     }
-
     executeFunctions();
 
     $(window).scroll(function(){
