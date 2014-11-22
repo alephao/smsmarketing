@@ -1,5 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:100,300,400,500);
 
+@media only screen and (max-width: 767px) {
+    * {
+        -webkit-transition: none !important;-moz-transition: none !important;-ms-transition: none !important;-o-transition: none !important;transition: none !important;
+    }
+}
+
 /*FONT SIZES
  * .sms-title
  * .sms-subtitle

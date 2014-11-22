@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html ng-app="smsmarketing" lang="pt">
 <head>
     <title>SMS Marketing</title>
 
@@ -11,10 +11,12 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
 </head>
-<body ng-app="">
+<body>
+
 <nav class="visible-xs">
     <ul>
         <li class="m-nav-moving-bg"></li>
@@ -60,15 +62,19 @@
                 <div class="col-xs-12 col-sm-6">
                     <h3 style="font-weight: 400">O SMS Marketing</h3>
                     <p>
-                        No Brasil o número de telefones celulares já ultrapassa a quantidade de habitantes no país. O sms tem uma taxa de leitura extremamente alta e é lido pouco tempo após ser recebido. É uma ferramenta de marketing poderosa que pode trazer resultados rápidos e até instantâneos, ajudando a fechar vendas e a conseguir novos clientes. Nós oferecemos esse serviço de uma forma simples, rápida e fácil, basta seguir os nossos três passos: Escrever a mensagem que deseja enviar, escolher os estados, cidades e bairros para os quais deseja enviar a mensagem e escolher um plano.
+                        No Brasil o número de telefones celulares já ultrapassa a quantidade de habitantes no país. O sms tem uma taxa de leitura extremamente alta e é lido pouco tempo após ser recebido. É uma ferramenta de marketing poderosa que pode trazer resultados rápidos e até instantâneos, ajudando você a fechar vendas e a conseguir novos clientes. Nós oferecemos esse serviço de uma forma simples, rápida e fácil, basta seguir os nossos três passos:.
                     </p>
+                    <ol>
+                        <li><span style="font-weight: 400">Mensagem:</span> Escrever a mensagem que deseja enviar</li>
+                        <li><span style="font-weight: 400">Onde:</span> Escolher as cidades para as quais deseja mandar o sms</li>
+                        <li><span style="font-weight: 400">Plano:</span> Escolher o plano que melhor se encaixa em seu orçamento</li>
+                    </ol>
                 </div>
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-12 col-sm-6 text-center">
                     <h3 class="hidden-xs">&nbsp;</h3>
                     <p>
 
                     </p>
-
                     <button class="btn-saiba btn-saiba-i" onclick="goToMensagem();"><span>Ir para o primeiro passo</span></button>
                 </div>
             </div>
@@ -91,7 +97,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <textarea maxlength="160"></textarea>
+                    <textarea maxlength="160" ng-model="message"></textarea>
                 </div>
             </div>
             <div class="row">
@@ -103,7 +109,7 @@
     </div>
 
 
-    <div class="row" id="onde">
+    <div class="row" id="onde" ng-controller="StatesController">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12 section-title-padding">
@@ -114,16 +120,13 @@
             </div>
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <h3 class="title-hint">Escolha para quais estados, cidades e bairros deseja mandar a mensagem.</h3>
+                    <h3 class="title-hint">Escolha para quais estados e cidades deseja mandar a mensagem.</h3>
                 </div>
             </div>
-            <div class="row">
+            <div class="row row-estados-brasil">
                 <div class="col-xs-12 text-center">
-                    <select name="estados-brasil" onchange="createCitiesList(this);">
-                        <option value="0">Selecione o Estado</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="SP">São Paulo</option>
+                    <select ng-model="stateList" onchange="createCitiesList(this);" ng-options="state as state.name for state in states" name="estados-brasil">
+                        <option value="">Escolha um Estado</option>
                     </select>
                 </div>
             </div>
@@ -165,11 +168,10 @@
                             <div class="price-body">
                                 <ul>
                                     <li>10.000 SMS</li>
-                                    <li>Até 2 estados</li>
-                                    <li>Não pode escolher para quais bairros enviar</li>
+                                    <li>Até 2 cidades</li>
                                 </ul>
                             </div>
-                            <div class="price-footer">Contratar</div>
+                            <div class="price-footer" data-toggle="modal" data-target="#confirmOrder" onclick="charQuantity(); chosenCities(); planBasic();">Contratar</div>
                         </div>
                     </div>
 
@@ -177,16 +179,15 @@
                         <div class="price-item">
                             <div class="price-header"><span>Intermediário</span></div>
                             <div class="price-price-border">
-                                <div class="price-price"><span>500</span></div>
+                                <div class="price-price"><span>400</span></div>
                             </div>
                             <div class="price-body">
                                 <ul>
                                     <li>50.000 SMS</li>
-                                    <li>Até 5 estados</li>
-                                    <li>Pode escolher para quais bairros enviar</li>
+                                    <li>Até 5 cidades</li>
                                 </ul>
                             </div>
-                            <div class="price-footer">Contratar</div>
+                            <div class="price-footer" data-toggle="modal" data-target="#confirmOrder" onclick="charQuantity(); chosenCities(); planInter();">Contratar</div>
                         </div>
                     </div>
 
@@ -194,16 +195,15 @@
                         <div class="price-item">
                             <div class="price-header"><span>Massivo</span></div>
                             <div class="price-price-border">
-                                <div class="price-price"><span>1000</span></div>
+                                <div class="price-price"><span>750</span></div>
                             </div>
                             <div class="price-body">
                                 <ul>
                                     <li>100.000 SMS</li>
-                                    <li>Até 27 estados</li>
-                                    <li>Pode escolher para quais bairros enviar</li>
+                                    <li>Até 10 cidades</li>
                                 </ul>
                             </div>
-                            <div class="price-footer">Contratar</div>
+                            <div class="price-footer" data-toggle="modal" data-target="#confirmOrder" onclick="charQuantity(); chosenCities(); planMassive();">Contratar</div>
                         </div>
                     </div>
 
@@ -227,6 +227,48 @@
         </div>
     </footer>
 
+</div>
+
+<div class="modal" id="confirmOrder" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h3  style="font-weight: 400" class="modal-title" id="myModalLabel">Confirmar compra</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4 style="font-weight:  400">Mensagem:</h4>
+                        "{{ message }}"
+                        <br/>
+                        <small><span>Quantidade de caracteres: </span><span id="charQuantity"></span></small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4 style="font-weight:  400">Cidades:</h4>
+                        <div id="chosenCities"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4 style="font-weight:  400">Plano:</h4>
+                        <div id="chosenPlan"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h4 style="font-weight:  400">Total: <span id="totalPrice"></span></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-warning" id="finishOrder">Comprar</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script type="text/javascript" src="js/javascript.js"></script>
