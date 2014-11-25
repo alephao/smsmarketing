@@ -108,6 +108,8 @@ $(function(){
     });
 
     $(window).resize();
+    
+    
 
 });
 
@@ -133,15 +135,15 @@ var states = [
 
 var createCitiesList = function(option) {
 
-    var next = $(option).next();
+    var next = $(option).next('select');
 
     if (next) {
         $(next).remove();
     }
 
-    var cities = states[$(option).val()].cities;
+    var cities = $.grep(states, function(e){ return e.name == $(option).val(); })[0].cities;
 
-    var newSelect = $('<select name="cidades-brasil">'+'</select>').insertAfter(option);
+    var newSelect = $('<select name="cidades-brasil[]" class="cityorstate">'+'</select>').insertAfter(option);
 
     $(cities).each(function() {
         $(newSelect).append('<option value="'+this+'">'+this+'</option>');
@@ -150,7 +152,7 @@ var createCitiesList = function(option) {
 
 var addState = function(object) {
     var passar = true;
-    $('[name="estados-brasil"]').each(function(){
+    $('[name="estados-brasil[]"]').each(function(){
         if ($(this).val() == "") {
             passar = false;
             alert('Você deve escolher um estado antes de adicionar outro!');
@@ -162,13 +164,19 @@ var addState = function(object) {
         var row = $('<div class="row"></div>').insertBefore($(object).parents('.row').first());
         $(row).append('<div class="col-xs-12 text-center"></div>');
         var col = $(row).children();
-        $(col).append('<select name="estados-brasil" onchange="createCitiesList(this);"></select>');
+        $(col).append('<select name="estados-brasil[]" class="cityorstate" onchange="createCitiesList(this);"></select>');
         var select = $(col).children();
         $(select).append('<option value="">Selecione o Estado</option>');
-        $(select).append('<option value="0">Minas Gerais</option>');
-        $(select).append('<option value="1">Rio de Janeiro</option>');
-        $(select).append('<option value="2">São Paulo</option>');
+        $(select).append('<option value="Minas Gerais">Minas Gerais</option>');
+        $(select).append('<option value="Rio de Janeiro">Rio de Janeiro</option>');
+        $(select).append('<option value="São Paulo">São Paulo</option>');
+
+        $('<span class="glyphicon glyphicon-remove" style="cursor: pointer" title="Remover" onclick="deleteRow(this);"></span>').insertAfter($(select));
     }
+}
+
+var deleteRow = function (rowChild) {
+    $(rowChild).parent().remove();
 }
 
 var charQuantity = function () {
@@ -178,9 +186,9 @@ var charQuantity = function () {
 var chosenCities = function () {
     var chosenCitiesHTML = "";
     
-    $('[name="estados-brasil"]').each(function(){
+    $('[name="estados-brasil[]"]').each(function(){
         if ($(this).val() != ""){
-            chosenCitiesHTML += $(this).parent().children('[name="cidades-brasil"]').val() + ' - ' + states[parseInt($(this).val())].name + '<br/>';
+            chosenCitiesHTML += $(this).parent().children('[name="cidades-brasil[]"]').val() + ' - ' + states[parseInt($(this).val())].name + '<br/>';
         }
     });
     
@@ -213,6 +221,28 @@ var planMassive = function () {
     $('#finishOrder').attr('href', '#pm');
     
 }
+
+$('.price-footer').click(function() {
+    /*if ($('textarea').val().length < 5) {
+        alert('Sua mensagem está muito curta!');
+        goToMensagem();
+    } else if ($('[name="cidades-brasil[]"]').length < 1) {
+        alert('Sua mensagem está muito curta!');
+        goToOnde();
+    } else if ( $('[name="cidades-brasil[]"]').length > $(this).data('mc') ) {
+        alert('Com esse plano você só pode escolher ' +$(this).data('mc')+ ' cidades!');
+        goToOnde();
+    } else {
+        charQuantity();
+        chosenCities();
+        $('#confirmOrder').modal('show');
+    }
+    */
+
+    $('input[name="maxcities"]').val($(this).data('mc'));
+
+    $('#confirmOrder').modal('show');
+});
 
 var goToActive = function() {
     $('.nav-moving-bg').css({

@@ -30,7 +30,7 @@ h4,
 h5,
 h6 {
     font-family: "Roboto",sans-serif;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 p {
@@ -551,4 +551,15 @@ nav.visible-xs ul li {
     cursor: pointer;
 
     padding: 1rem 0;
+}
+
+.centralizeList {
+    display: inline-block;
+
+    text-align: left;
+}
+
+
+.cityorstate {
+    margin: 0 10px 10px 10px;
 }
